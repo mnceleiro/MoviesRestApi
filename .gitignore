@@ -1,0 +1,10 @@
+# IDE related
+.history
+
+# Dependencies
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*

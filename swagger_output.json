@@ -1,0 +1,97 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/v1/movie/": {
+      "get": {
+        "tags": [
+          "Peliculas"
+        ],
+        "summary": "Obtiene la lista de peliculas.",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "tags": [
+          "Peliculas"
+        ],
+        "summary": "Crear una nueva pelicula.",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "put": {
+        "tags": [
+          "Peliculas"
+        ],
+        "summary": "Actualiza una pelicula.",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "delete": {
+        "tags": [
+          "Peliculas"
+        ],
+        "summary": "Elimina una película.",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/api/v1/movie/{id}": {
+      "get": {
+        "tags": [
+          "Peliculas"
+        ],
+        "summary": "Obtiene una pelicula por su id.",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/user/signup": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Registra un usuario.",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/user/login": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Obtiene la lista de peliculas.",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  }
+}
