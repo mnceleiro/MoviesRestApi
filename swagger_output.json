@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/api/v1/movie/": {
+    "/api/v1/movies/": {
       "get": {
         "tags": [
           "Peliculas"
@@ -49,7 +49,7 @@
         "responses": {}
       }
     },
-    "/api/v1/movie/{id}": {
+    "/api/v1/movies/{id}": {
       "get": {
         "tags": [
           "Peliculas"
@@ -67,7 +67,7 @@
         "responses": {}
       }
     },
-    "/api/v1/user/signup": {
+    "/api/v1/users/signup": {
       "post": {
         "tags": [
           "Usuarios"
@@ -82,7 +82,7 @@
         }
       }
     },
-    "/api/v1/user/login": {
+    "/api/v1/users/login": {
       "post": {
         "tags": [
           "Usuarios"

@@ -1,5 +1,5 @@
 const express = require('express');
-
+const moviesController = require('../controllers/movie');
 
 const router = express.Router();
 
@@ -8,7 +8,7 @@ router.get('/',
     #swagger.tags = ['Peliculas']
     #swagger.summary = 'Obtiene la lista de peliculas.'   
 */
-    (req, res) => { console.log('get all') }
+    moviesController.getAll
 );
 
 router.get('/:id', 
@@ -16,7 +16,7 @@ router.get('/:id',
     #swagger.tags = ['Peliculas']
     #swagger.summary = 'Obtiene una pelicula por su id.'   
 */
-    (req, res) => console.log('get by id')
+    moviesController.getById
 );
 
 router.post('/',
@@ -24,23 +24,23 @@ router.post('/',
     #swagger.tags = ['Peliculas']
     #swagger.summary = 'Crear una nueva pelicula.'   
 */
-    (req, res) => console.log('create new')
+    moviesController.create
 );
 
-router .put('/',
+router.put('/',
 /*
     #swagger.tags = ['Peliculas']
     #swagger.summary = 'Actualiza una pelicula.'   
 */
-    (req, res) => console.log('update existing one')
+    moviesController.update
 );
 
-router .delete('/', 
+router.delete('/:id', 
 /*
     #swagger.tags = ['Peliculas']
     #swagger.summary = 'Elimina una película.'   
 */
-    (req, res) => console.log('delete existing one')
+    moviesController.delete
 );
 
 module.exports = router;
