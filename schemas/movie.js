@@ -1,5 +1,6 @@
 const Joi = require('joi');
 
+// TODO: completar validaciones
 module.exports.createProductSchema = Joi.object({
     title: Joi.string().required(),
 

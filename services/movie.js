@@ -5,10 +5,12 @@ module.exports.create = async (movieFromRequest) => {
     const movie = new Movie(movieFromRequest);
     const savedMovie = await movie.save();
 
-    return savedMovie?.toObject();
+    return savedMovie ? savedMovie.toObject() : {};
 };
 
 module.exports.update = async (movieFromRequest) => {
+    dbUtils.validateMongoId(movieFromRequest.id);
+
     const updatedMovie = await Movie.findOneAndUpdate(
         { _id: movieFromRequest.id },
         movieFromRequest,
@@ -17,14 +19,14 @@ module.exports.update = async (movieFromRequest) => {
 
     console.log(updatedMovie);
 
-    return updatedMovie?.toObject();
+    return updatedMovie ? updatedMovie.toObject() : {};
 };
 
 module.exports.delete = async (id) => {
     // findByIdAndDelete es un shorthand para findOneAndDelete({ _id: id })
     const deleted = await Movie.findByIdAndDelete(id);
 
-    return deleted?.toObject();
+    return deleted ? deleted.toObject() : {};
 };
 
 module.exports.getAll = async () => {
@@ -35,11 +37,9 @@ module.exports.getAll = async () => {
 };
 
 module.exports.getById = async (id) => {
-    
     dbUtils.validateMongoId(id);
     
     const movie = await Movie.findById(id);
-    const movieToReturn = movie.toObject();
 
-    return movieToReturn;
+    return movie ? movie.toObject() : {};
 };

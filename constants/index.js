@@ -19,7 +19,8 @@ module.exports = {
             LOGIN_SUCCESS: 'Login correcto',
             DUPLICATE_EMAIL: 'Ya existe un usuario con el email proporcionado',
             USER_NOT_FOUND: 'Usuario no encontrado',
-            INVALID_PASSWORD: 'Contraseña incorrecta'
+            INVALID_PASSWORD: 'Contraseña incorrecta',
+            EMAIL_OR_PASSWORD_MISSING: 'Es necesario indicar un usuario y contrasenha'
         }
     },
     request: {

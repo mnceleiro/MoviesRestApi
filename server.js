@@ -10,9 +10,9 @@ dotEnv.config();
 const app = express();
 app.use(cors());
 
-// Necesario para que funcionen las peticiones con un body
+// Necesario para que funcionen las peticiones con un body y los parametros de las url correctamente
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // Conexion con la BBDD
 databaseConnection();
@@ -25,10 +25,11 @@ app.use('/api/v1/users', require('./routes/user.js'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Rutas no contempladas (404)
+// TODO: pasar mensaje a fichero de constantes
 app.all('*', (req, res, next) => {
     res.status(404).send({
       status: '404',
-      message: `Can't find ${req.originalUrl} on this server.`,
+      message: `No se ha encontrado la URL ${req.originalUrl} en este servidor.`,
       body: {}
     });
   });

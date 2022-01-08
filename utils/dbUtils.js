@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+const AppError = require('../exceptions/AppError');
 
 module.exports.validateMongoId = (id) => {
     if (!mongoIdIsValid(id)) {
-        throw new Error(`La ID ${id} no es válida.`);
+        // TODO: a fichero de constantes
+        throw new AppError(`La ID ${id} no es válida.`, 400);
     }
 }
 
