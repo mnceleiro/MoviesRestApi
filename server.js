@@ -36,9 +36,8 @@ app.all('*', (req, res, next) => {
 
 // Middleware que maneja errores de servidor
 app.use(function(err, req, res, next) {
-    console.error(err.stack);
     res.status(err.statusCode || 500).send({
-        status: err.statusCode || 500,
+        status: err.statusCode,
         message: err.message,
         body: {}
     });

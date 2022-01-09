@@ -15,7 +15,7 @@ router.get('/',
 router.get('/:id', 
 /*
     #swagger.tags = ['Peliculas']
-    #swagger.summary = 'Obtiene una pelicula por su id.'   
+    #swagger.summary = 'Obtiene una pelicula por su id.'
 */
     apiUtils.validateToken,
     moviesController.getById
@@ -24,7 +24,7 @@ router.get('/:id',
 router.post('/',
 /*
     #swagger.tags = ['Peliculas']
-    #swagger.summary = 'Crear una nueva pelicula.'   
+    #swagger.summary = 'Crear una nueva pelicula.'
 */
     apiUtils.validateToken,
     moviesController.create

@@ -23,27 +23,15 @@ const doc = {
     },
     definitions: {
         User: {
-            email: "mi.email@gmail.com",
-            password: "1234",
+            $email: "mi.email@gmail.com",
+            $password: "1234",
             firstName: "Marcos",
             lastName: "Nunez"
         },
         Movie: {
-            title: "Edge of Tomorrow",
-            runtimeMinutes: 128,
-            rating: 9
-        }
-    },
-    User: {
-        signup: {
-            $email: "mi.email@gmail.com",
-            $password: "1234",
-            $firstName: "Marcos",
-            $lastName: "Nunez"
-        },
-        Login: {
-            $email: "mi.email@gmail.com",
-            $password: 1234
+            $title: "Edge of Tomorrow",
+            $runtimeMinutes: 128,
+            $rating: 9
         }
     }
 }

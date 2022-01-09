@@ -6,11 +6,16 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 module.exports.signup = async (userFromRequest) => {
+    // Compruebo si parametros de la peticion incorrectos
+    // TODO: refactorizar con un middleware
+    if (!userFromRequest || !userFromRequest.email || !userFromRequest.password) {
+        throw new AppError(constants.user.messages.EMAIL_OR_PASSWORD_MISSING, 400);
+    }
 
     // Compruebo que no haya un usuario ya registrado con ese email
     const u = await User.findOne({ email: userFromRequest.email });
     if (u) {
-        throw new AppError(constants.user.messages.DUPLICATE_EMAIL);
+        throw new AppError(constants.user.messages.DUPLICATE_EMAIL, 400);
     }
 
     // Genero un hash para la password y lo guardo en la BBDD
@@ -33,7 +38,7 @@ module.exports.login = async ({ email, password }) => {
 
     const isValid = await bcrypt.compare(password, user.password)
     if (!isValid) {
-        throw new Error(constants.user.messages.INVALID_PASSWORD)
+        throw new AppError(constants.user.messages.INVALID_PASSWORD)
     }
 
     const token = jwt.sign(
