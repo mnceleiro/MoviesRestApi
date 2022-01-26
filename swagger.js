@@ -5,11 +5,13 @@ const endpointFiles = ['./server.js'];
 
 const doc = {
     info: {
-        version: "1.0.0",
+        version: "3.0.0",
         title: "API Rest de gestión de películas",
         description: "La documentación ha sido parcialmente autogenerada por el módulo: <b>swagger-autogen</b>."
     },
-    host: "localhost:3002",
+    servers: [{
+        url: "localhost:3002"
+    }],
     basePath: "/",
     schemes: ['http', 'https'],
     consumes: ['application/json'],

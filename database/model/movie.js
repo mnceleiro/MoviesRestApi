@@ -3,8 +3,15 @@ const mongoose = require("mongoose");
 // TODO: Validar esquema
 const movieSchema = new mongoose.Schema({
     title: String,
+    genre: String,
+    platform: String,
+    description: String,
+    imageUrl: String,
     runtimeMinutes: Number,
     rating: Number,
+    directorFirstname: String,
+    directorLastname: String,
+    directorPhone: String
 }, {
     timestamps: true,
 

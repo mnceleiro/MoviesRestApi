@@ -15,7 +15,11 @@ module.exports.validateToken = (req, res, next) => {
             throw new AppError(constants.request.validation.message.TOKEN_MISSING, 401);
         }
         
-        const token = req.headers.authorization.split('Bearer')[1].trim();
+        const token = req.headers.authorization.split('Bearer')[1]?.trim();
+        if (!token) {
+            throw new AppError(constants.request.validation.message.TOKEN_BAD_FORMAT, 400);
+        }
+        
         const decoded = jwt.verify(token, process.env.SECRET_KEY || 'api-secret-key');
 
         return next();

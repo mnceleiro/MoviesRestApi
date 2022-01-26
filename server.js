@@ -2,6 +2,7 @@ const express = require('express');
 const dotEnv = require('dotenv');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerDocument = require('./swagger_output.json');
 const databaseConnection = require('./database/connection');
 
@@ -21,8 +22,31 @@ databaseConnection();
 app.use('/api/v1/movies', require('./routes/movie.js'));
 app.use('/api/v1/users', require('./routes/user.js'));
 
+// TODO: refactorizar
 // Documentacion del API
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+        version: "1.0.0",
+        title: "API de gestión de películas",
+        description: "API REST de gestión de películas."
+    },
+    servers: [{
+        url: "http://localhost:3002/api/v1"
+    }, {
+      url: "https://damapi.herokuapp.com/api/v1/"
+    }],
+    consumes: ['application/json'],
+    produces: ['application/json'],
+  },
+  apis: ["./routes/*.js"],
+}
+
+const specs = swaggerJsDoc(options);
+app.use('/', swaggerUi.serve, swaggerUi.setup(specs));
+//app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // Rutas no contempladas (404)
 // TODO: pasar mensaje a fichero de constantes
@@ -36,6 +60,7 @@ app.all('*', (req, res, next) => {
 
 // Middleware que maneja errores de servidor
 app.use(function(err, req, res, next) {
+    console.log(err);
     res.status(err.statusCode || 500).send({
         status: err.statusCode,
         message: err.message,

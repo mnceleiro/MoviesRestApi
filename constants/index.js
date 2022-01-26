@@ -27,7 +27,8 @@ module.exports = {
         validation: {
             message: {
                 BAD_REQUEST: 'Campos incorrectos',
-                TOKEN_MISSING: 'Es necesario porporcionar el token de autenticación'
+                TOKEN_MISSING: 'Es necesario porporcionar el token de autenticación',
+                TOKEN_BAD_FORMAT: 'El formato del token es incorrecto.'
             }
         }
     },
