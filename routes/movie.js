@@ -22,6 +22,12 @@ const router = express.Router();
  *              title:
  *                  type: string
  *                  description: Título de la película
+ *              rating:
+ *                  type: number
+ *                  description: Puntuación de la película
+ *              runtimeMinutes:
+ *                  type: integer
+ *                  description: duración en minutos
  *              genre:
  *                  type: string
  *                  description: Género de la peícula
@@ -31,6 +37,15 @@ const router = express.Router();
  *              imageUrl:
  *                  type: string
  *                  description: URL de la carátula de la película
+ *              trailerUrl:
+ *                  type: string
+ *                  description: URL del trailer
+ *              releaseYear:
+ *                  type: integer
+ *                  description: Año de estreno
+ *              country:
+ *                  type: string
+ *                  description: País
  *              directorFirstname:
  *                  type: string
  *                  description: Nombre del director
@@ -40,6 +55,12 @@ const router = express.Router();
  *              directorPhone:
  *                  type: string
  *                  description: Teléfono del director
+ *              musicDirector:
+ *                  type: string
+ *                  description: Director musical
+ *              photographyDirector:
+ *                  type: string
+ *                  description: Director de fotografía
  */
 
 /**

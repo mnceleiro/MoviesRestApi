@@ -3,20 +3,23 @@ const Joi = require('joi');
 // TODO: completar validaciones
 module.exports.createMovieSchema = Joi.object({
     title: Joi.string().required(),
-
-    // TODO: validar minima y maxima nota
     rating: Joi.number().required(),
-
-    // TODO: validar minimo de minutos
     runtimeMinutes: Joi.number().required(),
-    
+
     genre: Joi.string(),
     platform: Joi.string(),
     description: Joi.string(),
     imageUrl: Joi.string(),
+    trailerUrl: Joi.string(),
+    releaseYear: Joi.number(),
+    country: Joi.string(),
+
     directorFirstname: Joi.string(),
     directorLastname: Joi.string(),
-    directorPhone: Joi.string()
+    directorPhone: Joi.string(),
+
+    musicDirector: Joi.string(),
+    photographyDirector: Joi.string()
 });
 
 module.exports.updateMovieSchema = Joi.object({
@@ -25,9 +28,16 @@ module.exports.updateMovieSchema = Joi.object({
     platform: Joi.string(),
     description: Joi.string(),
     imageUrl: Joi.string(),
+    trailerUrl: Joi.string(),
     rating: Joi.number(),
+
     runtimeMinutes: Joi.number(),
+    releaseYear: Joi.number(),
+
     directorFirstname: Joi.string(),
     directorLastname: Joi.string(),
-    directorPhone: Joi.string()
+    directorPhone: Joi.string(),
+
+    musicDirector: Joi.string(),
+    photographyDirector: Joi.string()
 });
