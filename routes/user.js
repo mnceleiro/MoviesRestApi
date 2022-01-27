@@ -8,6 +8,10 @@ const router = express.Router();
 /**
  * @swagger
  * components:
+ *  securitySchemes:
+ *      BearerAuth:
+ *          type: http
+ *          scheme: Bearer
  *  schemas:
  *      User:
  *          type: object
@@ -37,7 +41,7 @@ const router = express.Router();
  * /user/signup:
  *  post:
  *      summary: registra a un usuario
- *      tags: [Users]
+ *      tags: [Usuarios]
  *      requestBody:
  *          required: true
  *          content:

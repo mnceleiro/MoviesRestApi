@@ -47,7 +47,7 @@ const router = express.Router();
  * /movies:
  *  get:
  *      summary: devuelve la lista de películas
- *      tags: [Movies]
+ *      tags: [Peliculas]
  *      responses: 
  *          200:
  *              description: Lista de películas
