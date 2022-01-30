@@ -1,17 +1,28 @@
+const Joi = require("joi");
 const mongoose = require("mongoose");
 
 // TODO: Validar esquema
 const movieSchema = new mongoose.Schema({
     title: String,
+    runtimeMinutes: Number,
+    rating: Number,
     genre: String,
     platform: String,
     description: String,
     imageUrl: String,
-    runtimeMinutes: Number,
-    rating: Number,
+    trailerUrl: String,
+    releaseYear: Number,
+    country: String,
+    ageRating: Number,
+
     directorFirstname: String,
     directorLastname: String,
-    directorPhone: String
+    directorFullname: String,
+    directorPhone: String,
+
+    musicDirector: String,
+    photographyDirector: String,
+    screenwriters: String
 }, {
     timestamps: true,
 

@@ -46,12 +46,18 @@ const router = express.Router();
  *              country:
  *                  type: string
  *                  description: País
+ *              ageRating:
+ *                  type: integer,
+ *                  description: Edad recomendada
  *              directorFirstname:
  *                  type: string
  *                  description: Nombre del director
  *              directorLastname:
  *                  type: string
  *                  description: Apellidos del director
+ *              directorFullname:
+ *                  type: string
+ *                  description: Nombre y apellidos del director
  *              directorPhone:
  *                  type: string
  *                  description: Teléfono del director
@@ -61,6 +67,10 @@ const router = express.Router();
  *              photographyDirector:
  *                  type: string
  *                  description: Director de fotografía
+ *              Screenwriters:
+ *                  type: string
+ *                  description: Nombres y apellidos de los guionista/s separados por comas
+ *              
  */
 
 /**
