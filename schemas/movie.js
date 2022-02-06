@@ -3,8 +3,8 @@ const Joi = require('joi');
 // TODO: completar validaciones
 module.exports.createMovieSchema = Joi.object({
     title: Joi.string().required(),
-    rating: Joi.number().required(),
-    runtimeMinutes: Joi.number().required(),
+    rating: Joi.number(),
+    runtimeMinutes: Joi.number(),
 
     genre: Joi.string(),
     platform: Joi.string(),
@@ -26,6 +26,7 @@ module.exports.createMovieSchema = Joi.object({
 });
 
 module.exports.updateMovieSchema = Joi.object({
+    id: Joi.string(),
     title: Joi.string(),
     rating: Joi.number(),
     runtimeMinutes: Joi.number(),
