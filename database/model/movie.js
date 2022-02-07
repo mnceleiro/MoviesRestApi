@@ -14,6 +14,8 @@ const movieSchema = new mongoose.Schema({
     releaseYear: Number,
     country: String,
     ageRating: Number,
+
+    // TODO: devolver fecha sin el tiempo
     releaseDate: Date,
 
     directorFirstname: String,
@@ -35,6 +37,8 @@ const movieSchema = new mongoose.Schema({
             delete ret.__v;
             delete ret.createdAt;
             delete ret.updatedAt;
+
+            ret.releaseDate = ret.releaseDate?.toISOString()?.split('T')[0]
         }
     }
 });
