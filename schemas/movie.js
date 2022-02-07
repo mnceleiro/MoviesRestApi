@@ -12,6 +12,7 @@ module.exports.createMovieSchema = Joi.object({
     imageUrl: Joi.string(),
     trailerUrl: Joi.string(),
     releaseYear: Joi.number(),
+    releaseDate: Joi.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     country: Joi.string(),
     ageRating: Joi.number(),
 
@@ -26,7 +27,7 @@ module.exports.createMovieSchema = Joi.object({
 });
 
 module.exports.updateMovieSchema = Joi.object({
-    id: Joi.string(),
+    id: Joi.string().required(),
     title: Joi.string(),
     rating: Joi.number(),
     runtimeMinutes: Joi.number(),
@@ -36,6 +37,7 @@ module.exports.updateMovieSchema = Joi.object({
     imageUrl: Joi.string(),
     trailerUrl: Joi.string(),
     releaseYear: Joi.number(),
+    releaseDate: Joi.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     country: Joi.string(),
     ageRating: Joi.number(),
 

@@ -43,6 +43,9 @@ const router = express.Router();
  *              releaseYear:
  *                  type: integer
  *                  description: Año de estreno
+ *              releaseDate:
+ *                  type: date
+ *                  description: Fecha de estreno
  *              country:
  *                  type: string
  *                  description: País

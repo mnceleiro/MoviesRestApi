@@ -14,6 +14,7 @@ const movieSchema = new mongoose.Schema({
     releaseYear: Number,
     country: String,
     ageRating: Number,
+    releaseDate: Date,
 
     directorFirstname: String,
     directorLastname: String,
