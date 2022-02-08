@@ -28,7 +28,8 @@ module.exports = {
             message: {
                 BAD_REQUEST: 'Campos incorrectos',
                 TOKEN_MISSING: 'Es necesario porporcionar el token de autenticación',
-                TOKEN_BAD_FORMAT: 'El formato del token es incorrecto.'
+                TOKEN_BAD_FORMAT: 'El formato del token es incorrecto',
+                TOKEN_EXPIRED: 'El token ha expirado y ya no es valido'
             }
         }
     },

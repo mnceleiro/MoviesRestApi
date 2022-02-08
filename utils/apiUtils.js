@@ -20,7 +20,9 @@ module.exports.validateToken = (req, res, next) => {
             throw new AppError(constants.request.validation.message.TOKEN_BAD_FORMAT, 400);
         }
         
-        const decoded = jwt.verify(token, process.env.SECRET_KEY || 'api-secret-key');
+        const decoded = jwt.verify(token, process.env.SECRET_KEY || 'api-secret-key', (err) => {
+            if (err) throw new AppError(constants.request.validation.message.TOKEN_EXPIRED, 401);
+        });
 
         return next();
 
